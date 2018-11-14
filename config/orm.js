@@ -1,10 +1,10 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 
 
 // create 3 methods
-
+var orm;
 // selectAll()
 // insertOne()
 // updateOne()
