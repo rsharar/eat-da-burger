@@ -6,3 +6,6 @@ var express = require('express');
 
 // erxpress 4.0 documentation
 var router = express.Router();
+
+
+module.exports = router;
