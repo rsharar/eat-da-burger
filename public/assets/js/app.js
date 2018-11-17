@@ -22,7 +22,7 @@ $(document).ready(function () {
             var newDevouredState = {
                 devoured: devour
             };
-            $.ajax("/api/burgers" + burgerId, {
+            $.ajax("/api/burgers/" + burgerId, {
                 type: "PUT",
                 data: newDevouredState
             }).then(function () {
@@ -31,7 +31,7 @@ $(document).ready(function () {
             })
         }
         else {
-            $.ajax("/api/burgers" + burgerId, {
+            $.ajax("/api/burgers/" + burgerId, {
                 type: "DELETE"
             }).then(function () {
                 console.log("Burger gone")
