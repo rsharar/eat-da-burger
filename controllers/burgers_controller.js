@@ -7,7 +7,7 @@ var express = require('express');
 // express 4.0 documentation
 var router = express.Router();
 
-// create route for index.handlebars
+// GET route for index.handlebars
 router.get("/", function (req, res) {
     burger.all(function (data) {
         var obj = {
@@ -17,5 +17,40 @@ router.get("/", function (req, res) {
         res.render("index", obj);
     })
 })
+// POST route fired on click of submit btn
+router.post("/api/burgers", function(req,res){
+    burger.create(["burger_name"],[req.body.burger_name], function(data){
+        res.json({
+            id: data.insertId
+        });
+    })
+})
 
+// PUT route to update burger 'devoured' status
+router.put("/api/burgers/:id",function(req,res){
+    var burgerId = req.params.id;
+    burger.update({
+        devoured: req.body.devoured
+    }), burgerId, function(data){
+        if(data.changedRows === 0){
+            return res.status(404).end();
+        }
+        else{
+            return res.status(200).end();
+        }
+    }
+});
+
+// DELETE route
+router.delete("/api/burgers/:id", function(req, res){
+    var burgerId = "id = " + req.params.id;
+    burger.delete(burgerId, function(data){
+        if(data.affectedRows === 0){
+            return res.status(404).end();
+        }
+        else{
+            return res.status(200).end();
+        }
+    });
+});
 module.exports = router;
