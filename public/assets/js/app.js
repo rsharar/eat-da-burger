@@ -5,7 +5,11 @@ $(document).ready(function(){
             burger_name: $("#burger-input").val().trim()
         };
         console.log(newBurger);
-        $.post("/api/burgers", newBurger, function(data){
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function(){
             console.log("Added burger");
             location.reload();
     })
