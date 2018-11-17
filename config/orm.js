@@ -41,29 +41,25 @@ var orm = {
     // select all burgers in the burgers table
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
-        console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) throw err;
             else {
-                console.log(result);
                 cb(result);
             }
         })
     },
     // add a new burger to the burgers table using user input
     insertOne: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + tableInput;
-        queryString += "(" + cols.toString();
+        var queryString = "INSERT INTO " + table;
+        queryString += " (" + cols.toString();
         queryString += ")";
         queryString += " VALUES (" + generateQuestionMarks(vals.length);
         queryString += ") ";
         console.log(queryString);
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, vals, function (err, result) {
             if (err) throw err;
-            else {
-                console.log(result);
                 cb(result);
-            }
+
         })
     },
     // change the state of a burger to devoured when 'devoured' btn is clicked
@@ -72,11 +68,9 @@ var orm = {
         queryString += " SET"
         queryString += objToSql(obColVals);
         queryString += condition;
-        console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) throw err;
             else {
-                console.log(result);
                 cb(result);
             }
         })
