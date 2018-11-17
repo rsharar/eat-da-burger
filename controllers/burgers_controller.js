@@ -20,6 +20,7 @@ router.get("/", function (req, res) {
 // POST route fired on click of submit btn
 router.post("/api/burgers", function(req,res){
     burger.create(["burger_name"],[req.body.burger_name], function(data){
+        // console.log(req.body.burger_name);
         res.json({
             id: data.insertId
         });
@@ -28,10 +29,11 @@ router.post("/api/burgers", function(req,res){
 
 // PUT route to update burger 'devoured' status
 router.put("/api/burgers/:id",function(req,res){
-    var burgerId = req.params.id;
+    var condition = "id = " + req.params.id;
+    // console.log(condition);
     burger.update({
         devoured: req.body.devoured
-    }), burgerId, function(data){
+    }), condition, function(data){
         if(data.changedRows === 0){
             return res.status(404).end();
         }
