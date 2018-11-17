@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#burger-form").on('click', function(e){
+    $(".btn-danger").on('click', function(e){
         e.preventDefault();
         var newBurger = {
             burger_name: $("#burger-input").val().trim()
