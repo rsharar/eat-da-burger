@@ -30,10 +30,10 @@ router.post("/api/burgers", function(req,res){
 // PUT route to update burger 'devoured' status
 router.put("/api/burgers/:id",function(req,res){
     var condition = "id = " + req.params.id;
-    // console.log(condition);
+    console.log(req.body.devoured);
     burger.update({
-        devoured: req.body.devoured
-    }), condition, function(data){
+        devoured: req.body.devoured}
+    , condition, function(data){
         if(data.changedRows === 0){
             return res.status(404).end();
         }
@@ -41,7 +41,8 @@ router.put("/api/burgers/:id",function(req,res){
             return res.status(200).end();
         }
     }
-});
+);
+})
 
 // DELETE route
 router.delete("/api/burgers/:id", function(req, res){
