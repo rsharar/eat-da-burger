@@ -1,6 +1,7 @@
 # burger
 A burger tracking app with MySQL, Node, Express, Handlebars and a homemade ORM that follows the MVC design pattern. Uses Node and MySQL to query and route data in the app, and Handlebars to generate the HTML.
 
+![screen shot 2018-11-20 at 9 17 38 am](https://user-images.githubusercontent.com/18339700/48791644-04dbb000-eca7-11e8-8246-2d7f5463e0eb.png)
 
 
 
