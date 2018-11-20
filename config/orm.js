@@ -76,6 +76,17 @@ var orm = {
                 cb(result);
             }
         })
+    },
+    // delete a burger afted its been 'digested'
+    delete: function(table, burgerId, cb){
+        var queryString = "DELETE FROM " + table
+        queryString += " WHERE " + burgerId;
+        connection.query(queryString, function (err, result){
+            if (err) throw err;
+            else {
+                cb(result);
+            }
+        })
     }
 }
 // export orm object
