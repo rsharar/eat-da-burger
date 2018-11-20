@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-4 inline-block" id="burgers-list">
       <h4>Burgers Available</h4>
-      <ul>
+      <ul class = "list-group">
         {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burgers-block devour = true}}
-        {{/unless}}
+          {{#unless devoured}}
+            {{> burgers/burgers-block devour = true}}
+          {{/unless}}
         {{/each}}
       </ul>
     </div>
@@ -15,14 +15,14 @@
 
   <div class="col-4 text-center mt-5">
     <h1 class="display-4"><strong>Eat-Da-Burger</strong></h1>
-    {{!-- <img src="/public/img/hamburger.png" class="img-fluid" alt="burger icon"> --}}
+    <img src="/assets/img/hamburger.png" class="img-fluid" alt="burger-icon">
     <h2 class="mt-5">Add a Burger!</h2>
     <form id="burger-form">
       <div class="form-group">
         <label for="burger-input">I bet you're hungry and want a burger. What type of burger do you want?</label>
         <input type="text" class="form-control" id="burger-input">
       </div>
-      <button type="submit" class="btn btn-danger">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 
