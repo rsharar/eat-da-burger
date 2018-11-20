@@ -18,16 +18,17 @@ This app is deployed via Heroku and can be accessed at the following link: https
 ## Prerequisites
 
 npm pacakges
-`MySQL: https://www.npmjs.com/package/mysql`
 
-`Express: https://www.npmjs.com/package/express`
+```MySQL: https://www.npmjs.com/package/mysql```
 
-`Handlebars: https://www.npmjs.com/package/handlebars`
+```Express: https://www.npmjs.com/package/express```
 
-`Express Handlebars: https://www.npmjs.com/package/express-handlebars`
+```Handlebars: https://www.npmjs.com/package/handlebars```
+
+```Express Handlebars: https://www.npmjs.com/package/express-handlebars```
 
 JAWSDB Heroku MySQL add-on
-`https://elements.heroku.com/addons/jawsdb`
+```https://elements.heroku.com/addons/jawsdb```
 
 ## Technologies Used
 * Front-End
